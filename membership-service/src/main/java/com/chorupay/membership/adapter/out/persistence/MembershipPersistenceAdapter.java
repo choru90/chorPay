@@ -1,5 +1,6 @@
 package com.chorupay.membership.adapter.out.persistence;
 
+import com.chorupay.membership.adapter.application.port.out.FindMembershipPort;
 import com.chorupay.membership.adapter.application.port.out.RegisterMembershipPort;
 import com.chorupay.membership.domain.Membership;
 import common.PersistenceAdapter;
@@ -7,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 
 @PersistenceAdapter
 @RequiredArgsConstructor
-public class MembershipPersistenceAdapter implements RegisterMembershipPort {
+public class MembershipPersistenceAdapter implements RegisterMembershipPort, FindMembershipPort {
 
     private final SpringDataMembershipRepository membershipRepository;
 
@@ -20,5 +21,10 @@ public class MembershipPersistenceAdapter implements RegisterMembershipPort {
                 membershipIsValid.isMembershipIsValidValue(),
                 membershipIsCorp.isMembershipIsCorpValue()
         ));
+    }
+
+    @Override
+    public MembershipJpaEntity findMembership(Membership.MembershipId membershipId) {
+        return membershipRepository.findById(Long.parseLong(membershipId.getMembershipIdValue())).orElseThrow(() -> new RuntimeException());
     }
 }
