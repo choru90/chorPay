@@ -6,8 +6,8 @@ import com.chorupay.membership.adapter.application.port.out.FindMembershipPort;
 import com.chorupay.membership.adapter.out.persistence.MembershipJpaEntity;
 import com.chorupay.membership.adapter.out.persistence.MembershipMapper;
 import com.chorupay.membership.domain.Membership;
-import common.UserCase;
 import lombok.RequiredArgsConstructor;
+import org.chorupay.common.UserCase;
 
 @UserCase
 @RequiredArgsConstructor

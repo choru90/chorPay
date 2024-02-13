@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.core.annotation.AliasFor;
 
 @Getter
 @Entity
@@ -28,6 +27,14 @@ public class MembershipJpaEntity {
     private boolean isCorp;
 
     public MembershipJpaEntity(String name, String address, String email, boolean isValid, boolean isCorp) {
+        this.name = name;
+        this.address = address;
+        this.email = email;
+        this.isValid = isValid;
+        this.isCorp = isCorp;
+    }
+
+    public void update(String name, String address, String email, boolean isValid, boolean isCorp){
         this.name = name;
         this.address = address;
         this.email = email;

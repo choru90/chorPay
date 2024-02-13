@@ -1,9 +1,9 @@
 package com.chorupay.membership.adapter.application.port.in;
 
-import common.SelfValidating;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import org.chorupay.common.SelfValidating;
 
 @Getter
 @Builder

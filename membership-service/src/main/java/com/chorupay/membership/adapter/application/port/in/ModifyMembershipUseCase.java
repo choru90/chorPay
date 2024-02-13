@@ -2,7 +2,8 @@ package com.chorupay.membership.adapter.application.port.in;
 
 import com.chorupay.membership.domain.Membership;
 
-public interface RegisterMembershipUseCase {
+public interface ModifyMembershipUseCase {
 
-    Membership registerMembership(RegisterMembershipCommand command);
+    Membership modifyMembership(ModifyMembershipCommand command);
+
 }

@@ -1,7 +1,7 @@
-package common;
+package org.chorupay.common;
+
 
 import jakarta.validation.*;
-
 
 import java.util.Set;
 

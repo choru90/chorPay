@@ -3,14 +3,11 @@ package com.chorupay.membership.adapter.in.web;
 import com.chorupay.membership.adapter.application.port.in.RegisterMembershipCommand;
 import com.chorupay.membership.adapter.application.port.in.RegisterMembershipUseCase;
 import com.chorupay.membership.domain.Membership;
-import common.WebAdapter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.chorupay.common.WebAdapter;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.lang.reflect.Member;
 
 @WebAdapter
 @RestController
