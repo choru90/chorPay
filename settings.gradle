@@ -1,6 +1,4 @@
-rootProject.name = 'chorPay'
+rootProject.name = 'chorpay'
 include 'membership-service'
-include 'common'
-include 'common'
 include 'common'
 

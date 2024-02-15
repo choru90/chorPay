@@ -2,10 +2,11 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.2.2'
     id 'io.spring.dependency-management' version '1.1.4'
+    id 'com.palantir.docker' version '0.35.0'
 }
 
-group = 'com.chorpay'
-version = '0.0.1-SNAPSHOT'
+group = 'com.chorpay.membership'
+version = '1.0.1'
 
 java {
     sourceCompatibility = '17'
@@ -36,4 +37,12 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+docker {
+    println(tasks.bootJar.outputs.files)
+    name rootProject.name+'-'+project.name + ":" + version
+    dockerfile file('../Dockerfile')
+    files tasks.bootJar.outputs.files
+    buildArgs(['JAR_FILE': tasks.bootJar.outputs.files.singleFile.name])
 }
